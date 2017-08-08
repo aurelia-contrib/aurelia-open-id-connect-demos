@@ -71,7 +71,7 @@
             ".html",
             ".css"
           ],
-          "stub": true
+          "stub": false
         }
       ]
     },
@@ -132,7 +132,13 @@
             "path": "../node_modules/aurelia-testing/dist/amd",
             "main": "aurelia-testing",
             "env": "dev"
-          }
+          },
+          {   
+              "name": "aurelia-open-id-connect",   
+              "path": "../node_modules/aurelia-open-id-connect/dist/amd",   
+              "main": "index" 
+          }, 
+          "oidc-client"
         ]
       }
     ]
