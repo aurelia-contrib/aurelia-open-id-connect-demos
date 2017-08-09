@@ -17,4 +17,6 @@ Once the app is running, visit http://localhost:9000
 Login with an account that is part of the BigFontOutlook Azure Active Directory.
 
 * User name: throwaway01@bigfontoutlook.onmicrosoft.com
-* Password: Toka6207
+* Password: %%37DSIbGe*krCeh
+
+
