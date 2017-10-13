@@ -4,17 +4,20 @@ Demos of aurelia-open-id-connect.
 
 # Usage
 
-Clone this repository, and then open a command prompt in its root. Then:
+Clone this repository.
 
-    npm install aurelia-cli -g
+    git@github.com:shaunluttin/aurelia-open-id-connect-demos.git
+
+Then open a command prompt in its root and run:
+
     cd aurelia-app
     npm install
-    au build
-    au run --watch
+    node_modules/.bin/au build
+    node_modules/.bin/au run --watch
 
 Once the app is running, visit http://localhost:9000
 
-Login with an account that is part of the BigFontOutlook Azure Active Directory.
+As a demo, log in with an account that is part of the BigFontOutlook Azure Active Directory.
 
 * User name: throwaway01@bigfontoutlook.onmicrosoft.com
 * Password: %%37DSIbGe*krCeh
