@@ -17,4 +17,4 @@ Log in with the demo account from the BigFontOutlook Azure Active Directory.
 * User name: `throwaway01@bigfontoutlook.onmicrosoft.com`
 * Password: `%%37DSIbGe*krCeh`
 
-Note: If you receive this error: "No key matching kid or alg found in signing keys", then update [azure-signing-keys.ts](aurelia-app/src/azure-signing-keys.ts) file. It includes instructions on how to update itself.
+Note: If you receive this error: "No key matching kid or alg found in signing keys", then update [azure-signing-keys.ts](aurelia-app/src/azure-signing-keys.ts). It includes instructions on how to update itself.
