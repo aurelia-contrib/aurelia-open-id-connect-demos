@@ -1,6 +1,6 @@
 # aurelia-open-id-connect-demos
 
-Demos of aurelia-open-id-connect.
+Demos of [aurelia-open-id-connect](https://github.com/shaunluttin/aurelia-open-id-connect-demos).
 
 # Usage
 
@@ -17,11 +17,9 @@ Then open a command prompt in its root and run:
 
 Once the app is running, visit http://localhost:9000
 
-As a demo, log in with an account that is part of the BigFontOutlook Azure Active Directory.
+Log in with the demo account from the BigFontOutlook Azure Active Directory.
 
 * User name: throwaway01@bigfontoutlook.onmicrosoft.com
 * Password: %%37DSIbGe*krCeh
 
-Update `azure-signing-keys.ts` if you receive this error: "No key matching kid or alg found in signing keys". 
-
-
+Note: Update `azure-signing-keys.ts` if you receive this error: "No key matching kid or alg found in signing keys". 
