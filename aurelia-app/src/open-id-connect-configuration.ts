@@ -1,11 +1,11 @@
 import { OpenIdConnectConfiguration } from "aurelia-open-id-connect";
 import { UserManagerSettings, WebStorageStateStore } from "oidc-client";
 
-// Since https://login.windows.net/common/discovery/keys does not allow CORS
+// Since Azure Active Directory key discovery does not allow CORS
 // we need to configure the Provider signingKeys manually. If it did allow 
 // CORS, then the oidc-client-js would have automatically discovered those keys.
 // We store those keys here:
-azureSigningKeys from "./azure-signing-keys";
+import azureSigningKeys from "./azure-signing-keys";
 const appHost = "http://localhost:9000";
 
 export default {

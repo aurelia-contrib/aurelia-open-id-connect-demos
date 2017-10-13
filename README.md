@@ -22,4 +22,6 @@ As a demo, log in with an account that is part of the BigFontOutlook Azure Activ
 * User name: throwaway01@bigfontoutlook.onmicrosoft.com
 * Password: %%37DSIbGe*krCeh
 
+Update `azure-signing-keys.ts` if you receive this error: "No key matching kid or alg found in signing keys". 
+
 

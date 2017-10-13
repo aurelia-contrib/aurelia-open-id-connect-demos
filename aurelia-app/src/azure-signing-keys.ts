@@ -1,9 +1,15 @@
-// The signing keys come from https://login.windows.net/common/discovery/keys
+// +++++++++++++++++++++++++++++++++++++++++
+// The signing keys come from Azure Active Directory key discovery:
+// https://login.windows.net/common/discovery/keys
+
+// Update this file with new keys if the console shows this error: 
+// "No key matching kid or alg found in signing keys"
+
 // This is a TypeScript file instead of a JSON file
 // because the Aurelia CLI's default project requires
 // additional configuration to load JSON files.
-// Update this file with new keys if the console shows this error: 
-// "No key matching kid or alg found in signing keys"
+// +++++++++++++++++++++++++++++++++++++++++
+
 export default {
   "keys": [
     {
