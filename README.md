@@ -10,12 +10,12 @@ Demos of [aurelia-open-id-connect](https://github.com/shaunluttin/aurelia-open-i
     node_modules/.bin/au build
     node_modules/.bin/au run --watch
 
-Once the app is running, visit http://localhost:9000
+Once the app is running, visit `http://localhost:9000`
 
 Try the test account from the BigFontOutlook Azure Active Directory
 
-* User name: throwaway01@bigfontoutlook.onmicrosoft.com
-* Password: %%37DSIbGe*krCeh
+* User name: `throwaway01@bigfontoutlook.onmicrosoft.com`
+* Password: `%%37DSIbGe*krCeh`
 
 # Troubleshooting
 
