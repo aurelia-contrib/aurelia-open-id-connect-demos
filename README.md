@@ -17,11 +17,16 @@ Then open a command prompt in its root and run:
 
 Once the app is running, visit http://localhost:9000
 
-As a demo, log in with an account that is part of the BigFontOutlook Azure Active Directory.
+Try the test account from the BigFontOutlook Azure Active Directory
 
 * User name: throwaway01@bigfontoutlook.onmicrosoft.com
 * Password: %%37DSIbGe*krCeh
 
-Update `azure-signing-keys.ts` if you receive this error: "No key matching kid or alg found in signing keys". 
+# Troubleshooting
+
+* If you receive a **No key matching kid or alg found in signing keys** error,
+then open `azure-signing-keys.ts` and follow its update instructions.
+
+* Check that you have installed the most recent plugin version: `npm view aurelia-open-id-connect version`
 
 
