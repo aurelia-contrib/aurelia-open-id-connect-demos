@@ -13,6 +13,7 @@ export class App {
     this.openIdConnect.logger.enableLogging(Log.INFO);
     this.openIdConnect.userManager.getUser().then((user) => {
       this.user = user;
+      console.log(user);
     });
   }
 

@@ -1,7 +1,7 @@
 import { Aurelia } from 'aurelia-framework'
+import { OpenIdConnectConfiguration } from "aurelia-open-id-connect";
 import environment from './environment';
 import oidcConfig from "./open-id-connect-configuration";
-import { OpenIdConnectConfiguration } from "aurelia-open-id-connect";
 
 export function configure(aurelia: Aurelia) {
   aurelia.use
