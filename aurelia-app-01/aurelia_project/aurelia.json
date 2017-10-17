@@ -72,6 +72,12 @@
             "main": "aurelia-testing",
             "env": "dev"
           },
+          {
+            "name": "aurelia-open-id-connect",
+            "path": "../node_modules/aurelia-open-id-connect/dist/amd",
+            "main": "index"
+          },
+          "oidc-client",
           "text"
         ]
       }
@@ -87,7 +93,7 @@
             ".html",
             ".css"
           ],
-          "stub": true
+          "stub": false
         }
       ]
     }
