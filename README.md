@@ -5,14 +5,19 @@ Demos of [aurelia-open-id-connect](https://github.com/shaunluttin/aurelia-open-i
 # Usage
 
     git clone git@github.com:shaunluttin/aurelia-open-id-connect-demos.git
-    cd aurelia-app
+    cd aurelia-app-auth0
     npm install
     node_modules/.bin/au build
     node_modules/.bin/au run --watch
 
 Once the app is running, visit `http://localhost:9000`
 
-Try the test account from the BigFontOutlook Azure Active Directory
+Test account for the BigFont Auth0 Tenant
+
+* User name: `auth0test01@shaunluttin.com`
+* Password: `v1Qg@LPLR0k0cJ6Z`
+
+Test account for the BigFontOutlook Azure Active Directory
 
 * User name: `throwaway01@bigfontoutlook.onmicrosoft.com`
 * Password: `%%37DSIbGe*krCeh`
