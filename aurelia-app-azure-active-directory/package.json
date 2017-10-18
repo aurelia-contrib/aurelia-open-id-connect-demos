@@ -6,11 +6,14 @@
     "type": "???",
     "url": "???"
   },
+  "scripts": {
+    "demo": "au build && au run --watch"
+  },
   "license": "MIT",
   "dependencies": {
     "aurelia-animator-css": "^1.0.2",
     "aurelia-bootstrapper": "^2.1.1",
-    "aurelia-open-id-connect": "0.17.1",
+    "aurelia-open-id-connect": "0.17.2",
     "bluebird": "^3.4.1",
     "requirejs": "^2.3.2",
     "text": "github:requirejs/text#latest"
