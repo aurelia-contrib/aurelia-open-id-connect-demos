@@ -7,8 +7,7 @@ Demos of [aurelia-open-id-connect](https://github.com/shaunluttin/aurelia-open-i
     git clone git@github.com:shaunluttin/aurelia-open-id-connect-demos.git
     cd aurelia-app-auth0
     npm install
-    node_modules/.bin/au build
-    node_modules/.bin/au run --watch
+    npm run demo
 
 Once the app is running, visit `http://localhost:9000`
 
