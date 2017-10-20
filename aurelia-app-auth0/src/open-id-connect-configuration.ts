@@ -12,8 +12,6 @@ export default {
     accessTokenExpiringNotificationTime: 1,
     // Either host your own OpenID Provider or select a certified authority
     // from the list http://openid.net/certification/
-    // We are using Azure Active Directory as our authority.
-    // See http://bit.ly/2wrX5Wg for details.
     authority: "https://bigfont.auth0.com",
     automaticSilentRenew: false,
     // The interval in milliseconds between checking the user's session.
