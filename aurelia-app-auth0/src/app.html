@@ -7,15 +7,14 @@
     }
 
     li {
-      margin:0 10px;
-      display:inline-block;
+      margin: 0 10px;
+      display: inline-block;
     }
 
     div.view {
-      clear:both;
-      margin:10px 0;
-      padding:15px;
-      border:thin solid silver;
+      margin: 10px 0;
+      padding: 15px;
+      border: thin solid silver;
     }
   </style>
 
@@ -25,11 +24,10 @@
     <li repeat.for="nav of router.navigation">
       <a href.bind="nav.href">${nav.title}</a>
     </li>
-    <li><open-id-connect-user-block></open-id-connect-user-block></li>
+    <li>
+      <open-id-connect-user-block></open-id-connect-user-block>
+    </li>
   </ul>
-
-
-  
 
   <div class="view">
     <router-view></router-view>
