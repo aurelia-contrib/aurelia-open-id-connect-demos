@@ -30,6 +30,14 @@ export class App {
         name: "index",
         route: ["", "index"],
         title: "index",
+        nav: true,
+      },
+      {
+        moduleId: "private",
+        name: "private",
+        route: ["private"],
+        title: "private",
+        nav: true,
       },
     ]);
 
