@@ -38,6 +38,9 @@ export class App {
         route: ["private"],
         title: "private",
         nav: true,
+        settings: {
+          roles: [OpenIdConnectRoles.Authenticated],
+        }
       },
     ]);
 
