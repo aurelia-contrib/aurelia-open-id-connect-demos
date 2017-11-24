@@ -10,7 +10,6 @@ export class App {
   private user: User;
 
   constructor(private openIdConnect: OpenIdConnect) {
-    this.openIdConnect.logger.enableLogging(Log.INFO);
     this.openIdConnect.userManager.getUser().then((user) => {
       this.user = user;
       console.log(user);
@@ -30,6 +29,17 @@ export class App {
         name: "index",
         route: ["", "index"],
         title: "index",
+        nav: true,
+      },
+      {
+        moduleId: "private",
+        name: "private",
+        route: ["private"],
+        title: "private",
+        nav: true,
+        settings: {
+          roles: [OpenIdConnectRoles.Authenticated],
+        }
       },
     ]);
 
@@ -37,3 +47,4 @@ export class App {
     this.router = router;
   }
 }
+
