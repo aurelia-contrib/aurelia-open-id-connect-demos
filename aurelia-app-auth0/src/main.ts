@@ -1,5 +1,4 @@
 import { Aurelia } from 'aurelia-framework'
-import { OpenIdConnectConfiguration } from "aurelia-open-id-connect";
 import environment from './environment';
 import oidcConfig from "./open-id-connect-configuration";
 
@@ -8,12 +7,7 @@ export function configure(aurelia: Aurelia) {
     .standardConfiguration()
     .feature('resources');
 
-  aurelia.use
-    .plugin("aurelia-open-id-connect", (config: OpenIdConnectConfiguration) => {
-      config.userManagerSettings = oidcConfig.userManagerSettings;
-      config.loginRedirectModuleId = oidcConfig.loginRedirectModuleId;
-      config.logoutRedirectModuleId = oidcConfig.logoutRedirectModuleId;
-    });
+  aurelia.use.plugin("aurelia-open-id-connect", () => oidcConfig);
 
   if (environment.debug) {
     aurelia.use.developmentLogging();

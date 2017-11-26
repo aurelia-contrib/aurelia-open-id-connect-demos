@@ -1,11 +1,13 @@
 import { OpenIdConnectConfiguration } from "aurelia-open-id-connect";
-import { UserManagerSettings, WebStorageStateStore } from "oidc-client";
+import { Log, UserManagerSettings, WebStorageStateStore } from "oidc-client";
 
 const appHost = "http://localhost:9000";
 
 export default {
   loginRedirectModuleId: "private",
   logoutRedirectModuleId: "index",
+  unauthorizedRedirectModuleId: "index",
+  logLevel: Log.DEBUG,
   userManagerSettings: {
     // The number of seconds in advance of access token expiry
     // to raise the access token expiring event.
