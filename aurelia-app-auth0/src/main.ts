@@ -9,15 +9,17 @@ export function configure(aurelia: Aurelia) {
         .feature('resources');
 
     // Simplified configuration as of v0.19.0.
-    // aurelia.use.plugin("aurelia-open-id-connect", () => oidcConfig);
+    aurelia.use.plugin("aurelia-open-id-connect", () => oidcConfig);
+
 
     // Legacy configuration from before v0.19.0.
-    aurelia.use
-        .plugin("aurelia-open-id-connect", (config: OpenIdConnectConfiguration) => {
-            config.userManagerSettings = oidcConfig.userManagerSettings;
-            config.loginRedirectModuleId = oidcConfig.loginRedirectModuleId;
-            config.logoutRedirectModuleId = oidcConfig.logoutRedirectModuleId;
-        });
+    // aurelia.use
+    //     .plugin("aurelia-open-id-connect", (config: OpenIdConnectConfiguration) => {
+    //         config.userManagerSettings = oidcConfig.userManagerSettings;
+    //         config.loginRedirectModuleId = oidcConfig.loginRedirectModuleId;
+    //         config.logoutRedirectModuleId = oidcConfig.logoutRedirectModuleId;
+    //         config.logLevel = 4;
+    //     });
 
     if (environment.debug) {
         aurelia.use.developmentLogging();
