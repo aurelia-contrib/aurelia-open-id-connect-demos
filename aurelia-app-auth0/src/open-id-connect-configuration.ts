@@ -4,7 +4,7 @@ import { UserManagerSettings, WebStorageStateStore } from "oidc-client";
 const appHost = "http://localhost:9000";
 
 export default {
-  loginRedirectModuleId: "index",
+  loginRedirectModuleId: "private",
   logoutRedirectModuleId: "index",
   userManagerSettings: {
     // The number of seconds in advance of access token expiry
