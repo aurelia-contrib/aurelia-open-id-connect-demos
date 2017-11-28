@@ -1,6 +1,6 @@
 import { autoinject } from "aurelia-framework";
 import { RouterConfiguration, Router } from "aurelia-router";
-import { User, Log } from "oidc-client";
+import { User } from "oidc-client";
 import { OpenIdConnect, OpenIdConnectRoles } from "aurelia-open-id-connect";
 
 @autoinject
@@ -10,10 +10,7 @@ export class App {
   private user: User;
 
   constructor(private openIdConnect: OpenIdConnect) {
-    this.openIdConnect.userManager.getUser().then((user) => {
-      this.user = user;
-      console.log(user);
-    });
+    this.openIdConnect.observeUser((user: User) => this.user = user);
   }
 
   public configureRouter(routerConfiguration: RouterConfiguration, router: Router) {
@@ -29,6 +26,17 @@ export class App {
         name: "index",
         route: ["", "index"],
         title: "index",
+        nav: true,
+      },
+      {
+        moduleId: "private",
+        name: "private",
+        route: ["private"],
+        title: "private",
+        nav: true,
+        settings: {
+          roles: [OpenIdConnectRoles.Authenticated],
+        }
       },
     ]);
 
@@ -36,3 +44,5 @@ export class App {
     this.router = router;
   }
 }
+
+

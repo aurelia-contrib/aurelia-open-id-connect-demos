@@ -350,9 +350,9 @@
       }
     },
     "aurelia-open-id-connect": {
-      "version": "0.22.0",
-      "resolved": "https://registry.npmjs.org/aurelia-open-id-connect/-/aurelia-open-id-connect-0.22.0.tgz",
-      "integrity": "sha512-Ftwin2q5QP6pdL0zAQaGourriWw4t3xSVzXwvvyPesfjNVEPB8/RNqahZrOMKTfZMSZ8BpuTs64Ay4B8BAwQqQ==",
+      "version": "0.23.0",
+      "resolved": "https://registry.npmjs.org/aurelia-open-id-connect/-/aurelia-open-id-connect-0.23.0.tgz",
+      "integrity": "sha512-M4VXgFMML4LvUbH32kcc3yz+BUA4l0bMHRA0kIfUsg1hDQGTVa1+3WpK2OrtHvnH3NbSxR50aR8VPtJVYJegpQ==",
       "dev": true,
       "requires": {
         "aurelia-fetch-client": "1.1.3",
