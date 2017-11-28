@@ -4,3 +4,14 @@
         padding-top: 50px;
     }
 }
+
+.user-block>button,
+.user-debug>button {
+    float: left;
+    padding: 15px;
+    margin: 15px 15px 15px 0;
+}
+
+.user-debug>pre {
+    clear: both;
+}
