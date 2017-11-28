@@ -1,18 +1,19 @@
 import { PLATFORM, autoinject } from 'aurelia-framework';
 import { Router, RouterConfiguration } from 'aurelia-router';
 import { User, Log } from "oidc-client";
-import { OpenIdConnect, OpenIdConnectRoles } from "aurelia-open-id-connect";
+import { OpenIdConnect, OpenIdConnectRoles, OpenIdConnectUserObserver } from "aurelia-open-id-connect";
 
 @autoinject()
-export class App {
+export class App implements OpenIdConnectUserObserver {
     private router: Router;
     private user: User;
 
     constructor(private openIdConnect: OpenIdConnect) {
-        this.openIdConnect.userManager.getUser().then((user) => {
-            this.user = user;
-            console.log(user);
-        });
+        this.openIdConnect.observeUser(this);
+    }
+
+    userChanged(user: User): void {
+        this.user = user;
     }
 
     configureRouter(config: RouterConfiguration, router: Router) {
@@ -24,7 +25,7 @@ export class App {
         config.options.root = '/';
 
         config.map([{
-            route: [ '', 'home' ],
+            route: ['', 'home'],
             name: 'home',
             settings: { icon: 'home' },
             moduleId: PLATFORM.moduleName('../home/home'),
