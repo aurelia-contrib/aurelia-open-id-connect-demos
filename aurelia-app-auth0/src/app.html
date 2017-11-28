@@ -21,7 +21,7 @@
   <span>${router.title}</span>
 
   <ul>
-    <li repeat.for="nav of router.navigation">
+    <li repeat.for="nav of router.navigation | openIdConnectNavigation:user">
       <a href.bind="nav.href">${nav.title}</a>
     </li>
     <li>

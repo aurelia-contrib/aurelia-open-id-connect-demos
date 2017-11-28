@@ -1,49 +1,50 @@
 import { autoinject } from "aurelia-framework";
 import { RouterConfiguration, Router } from "aurelia-router";
 import { User, Log } from "oidc-client";
-import { OpenIdConnect, OpenIdConnectRoles } from "aurelia-open-id-connect";
+import { OpenIdConnect, OpenIdConnectRoles, OpenIdConnectUserObserver } from "aurelia-open-id-connect";
 
 @autoinject
-export class App {
+export class App implements OpenIdConnectUserObserver {
 
-  private router: Router;
-  private user: User;
+    private router: Router;
+    private user: User;
 
-  constructor(private openIdConnect: OpenIdConnect) {
-    this.openIdConnect.userManager.getUser().then((user) => {
-      this.user = user;
-      console.log(user);
-    });
-  }
+    constructor(private openIdConnect: OpenIdConnect) {
+        this.openIdConnect.observeUser(this);
+    }
 
-  public configureRouter(routerConfiguration: RouterConfiguration, router: Router) {
+    public userChanged(user: User): void {
+        this.user = user;
+    }
 
-    // switch from hash (#) to slash (/) navigation
-    routerConfiguration.options.pushState = true;
-    routerConfiguration.title = "OpenID Connect Implicit Flow Demo";
+    public configureRouter(routerConfiguration: RouterConfiguration, router: Router) {
 
-    // configure routes
-    routerConfiguration.map([
-      {
-        moduleId: "index",
-        name: "index",
-        route: ["", "index"],
-        title: "index",
-        nav: true,
-      },
-      {
-        moduleId: "private",
-        name: "private",
-        route: ["private"],
-        title: "private",
-        nav: true,
-        settings: {
-          roles: [OpenIdConnectRoles.Authenticated],
-        }
-      },
-    ]);
+        // switch from hash (#) to slash (/) navigation
+        routerConfiguration.options.pushState = true;
+        routerConfiguration.title = "OpenID Connect Implicit Flow Demo";
 
-    this.openIdConnect.configure(routerConfiguration);
-    this.router = router;
-  }
+        // configure routes
+        routerConfiguration.map([
+            {
+                moduleId: "index",
+                name: "index",
+                route: ["", "index"],
+                title: "index",
+                nav: true,
+            },
+            {
+                moduleId: "private",
+                name: "private",
+                route: ["private"],
+                title: "private",
+                nav: true,
+                settings: {
+                    roles: [OpenIdConnectRoles.Authenticated],
+                }
+            },
+        ]);
+
+        this.openIdConnect.configure(routerConfiguration);
+        this.router = router;
+    }
 }
