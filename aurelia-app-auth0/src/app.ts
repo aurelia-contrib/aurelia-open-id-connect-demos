@@ -1,20 +1,16 @@
 import { autoinject } from "aurelia-framework";
 import { RouterConfiguration, Router } from "aurelia-router";
-import { User, Log } from "oidc-client";
-import { OpenIdConnect, OpenIdConnectRoles, OpenIdConnectUserObserver } from "aurelia-open-id-connect";
+import { User } from "oidc-client";
+import { OpenIdConnect, OpenIdConnectRoles } from "aurelia-open-id-connect";
 
 @autoinject
-export class App implements OpenIdConnectUserObserver {
+export class App {
 
     private router: Router;
     private user: User;
 
     constructor(private openIdConnect: OpenIdConnect) {
-        this.openIdConnect.observeUser(this);
-    }
-
-    public userChanged(user: User): void {
-        this.user = user;
+        this.openIdConnect.observeUser((user: User) => this.user = user);
     }
 
     public configureRouter(routerConfiguration: RouterConfiguration, router: Router) {
