@@ -350,55 +350,16 @@
       }
     },
     "aurelia-open-id-connect": {
-      "version": "0.23.0",
-      "resolved": "https://registry.npmjs.org/aurelia-open-id-connect/-/aurelia-open-id-connect-0.23.0.tgz",
-      "integrity": "sha512-M4VXgFMML4LvUbH32kcc3yz+BUA4l0bMHRA0kIfUsg1hDQGTVa1+3WpK2OrtHvnH3NbSxR50aR8VPtJVYJegpQ==",
+      "version": "0.24.1",
+      "resolved": "https://registry.npmjs.org/aurelia-open-id-connect/-/aurelia-open-id-connect-0.24.1.tgz",
+      "integrity": "sha512-f3oATIlci5EJnUSd9Aj6AC3PpiYVA9SVby0zgjrgZcSkGVLNiV0v8lk2GQ4ag4NCbe8XC5RfHjfSzmDtiejBtA==",
       "dev": true,
       "requires": {
-        "aurelia-fetch-client": "1.1.3",
-        "aurelia-framework": "1.1.5",
-        "aurelia-router": "1.4.0",
+        "aurelia-fetch-client": "1.1.2",
+        "aurelia-framework": "1.1.2",
+        "aurelia-router": "1.3.0",
         "babel-polyfill": "6.26.0",
         "oidc-client": "1.4.1"
-      },
-      "dependencies": {
-        "aurelia-fetch-client": {
-          "version": "1.1.3",
-          "resolved": "https://registry.npmjs.org/aurelia-fetch-client/-/aurelia-fetch-client-1.1.3.tgz",
-          "integrity": "sha1-O2pLi53kgJ6Za9oSmfBYOMOQewo=",
-          "dev": true
-        },
-        "aurelia-framework": {
-          "version": "1.1.5",
-          "resolved": "https://registry.npmjs.org/aurelia-framework/-/aurelia-framework-1.1.5.tgz",
-          "integrity": "sha1-/ZfSgcAtNbuYAygwsHMew9Kmwdc=",
-          "dev": true,
-          "requires": {
-            "aurelia-binding": "1.2.1",
-            "aurelia-dependency-injection": "1.3.1",
-            "aurelia-loader": "1.0.0",
-            "aurelia-logging": "1.3.1",
-            "aurelia-metadata": "1.0.3",
-            "aurelia-pal": "1.3.0",
-            "aurelia-path": "1.1.1",
-            "aurelia-task-queue": "1.2.0",
-            "aurelia-templating": "1.4.2"
-          }
-        },
-        "aurelia-router": {
-          "version": "1.4.0",
-          "resolved": "https://registry.npmjs.org/aurelia-router/-/aurelia-router-1.4.0.tgz",
-          "integrity": "sha1-phCduikWBlueH6R/49zmnS+1/x0=",
-          "dev": true,
-          "requires": {
-            "aurelia-dependency-injection": "1.3.1",
-            "aurelia-event-aggregator": "1.0.1",
-            "aurelia-history": "1.0.0",
-            "aurelia-logging": "1.3.1",
-            "aurelia-path": "1.1.1",
-            "aurelia-route-recognizer": "1.1.0"
-          }
-        }
       }
     },
     "aurelia-pal": {
