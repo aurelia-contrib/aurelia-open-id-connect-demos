@@ -1,4 +1,4 @@
-import { autoinject } from "aurelia-framework";
+import { autoinject, PLATFORM } from "aurelia-framework";
 import { RouterConfiguration, Router } from "aurelia-router";
 import { User } from "oidc-client";
 import { OpenIdConnect, OpenIdConnectRoles } from "aurelia-open-id-connect";
@@ -19,26 +19,33 @@ export class App {
     routerConfiguration.options.pushState = true;
     routerConfiguration.title = "OpenID Connect Implicit Flow Demo";
 
-    // configure routes
-    routerConfiguration.map([
-      {
-        moduleId: "index",
-        name: "index",
-        route: ["", "index"],
-        title: "index",
-        nav: true,
+    routerConfiguration.map([{
+      // change the route to match the configuration
+      route: ['', 'home', 'index'],
+      name: 'home',
+      settings: { icon: 'home' },
+      moduleId: PLATFORM.moduleName('../home/home'),
+      nav: true,
+      title: 'Home'
+    }, {
+      // change the route to match the configuration
+      route: ['counter', 'private'],
+      name: 'counter',
+      settings: {
+        icon: 'education',
+        roles: [OpenIdConnectRoles.Authenticated]
       },
-      {
-        moduleId: "private",
-        name: "private",
-        route: ["private"],
-        title: "private",
-        nav: true,
-        settings: {
-          roles: [OpenIdConnectRoles.Authenticated],
-        }
-      },
-    ]);
+      moduleId: PLATFORM.moduleName('../counter/counter'),
+      nav: true,
+      title: 'Counter'
+    }, {
+      route: 'fetch-data',
+      name: 'fetchdata',
+      settings: { icon: 'th-list' },
+      moduleId: PLATFORM.moduleName('../fetchdata/fetchdata'),
+      nav: true,
+      title: 'Fetch data'
+    }]);
 
     this.openIdConnect.configure(routerConfiguration);
     this.router = router;
