@@ -31,10 +31,7 @@ export class App {
       // change the route to match the configuration
       route: ['counter', 'private'],
       name: 'counter',
-      settings: {
-        icon: 'education',
-        roles: [OpenIdConnectRoles.Authenticated]
-      },
+      settings: { icon: 'education' },
       moduleId: PLATFORM.moduleName('../counter/counter'),
       nav: true,
       title: 'Counter'
