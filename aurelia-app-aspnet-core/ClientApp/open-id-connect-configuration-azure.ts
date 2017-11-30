@@ -9,8 +9,8 @@ import azureSigningKeys from "./azure-signing-keys";
 const appHost = "http://localhost:9000";
 
 export default {
-  loginRedirectModuleId: "index",
-  logoutRedirectModuleId: "index",
+  loginRedirectRoute: "index",
+  logoutRedirectRoute: "index",
   userManagerSettings: <UserManagerSettings>{
     // The number of seconds in advance of access token expiry
     // to raise the access token expiring event.

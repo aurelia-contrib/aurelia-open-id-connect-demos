@@ -4,8 +4,8 @@ import { UserManagerSettings, WebStorageStateStore } from "oidc-client";
 const appHost = "http://localhost:9000";
 
 export default {
-  loginRedirectModuleId: "index",
-  logoutRedirectModuleId: "index",
+  loginRedirectRoute: "index",
+  logoutRedirectRoute: "index",
   userManagerSettings: {
 
     // The number of seconds in advance of access token expiry
@@ -22,7 +22,7 @@ export default {
     // https://openid.net/specs/openid-connect-session-1_0.html
     monitorSession: true,
     checkSessionInterval: 2000,
-    
+
     // The client or application ID that the authority issues.
     client_id: "implicit",
 
