@@ -19,6 +19,7 @@ namespace AureliaApp
 
         public static IWebHost BuildWebHost(string[] args) =>
             WebHost.CreateDefaultBuilder(args)
+                .UseUrls("http://localhost:9000")
                 .UseStartup<Startup>()
                 .Build();
     }
