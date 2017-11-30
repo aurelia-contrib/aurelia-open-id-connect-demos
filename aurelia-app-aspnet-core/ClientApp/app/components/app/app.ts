@@ -1,53 +1,46 @@
-import { PLATFORM, autoinject } from 'aurelia-framework';
-import { Router, RouterConfiguration } from 'aurelia-router';
+import { autoinject } from "aurelia-framework";
+import { RouterConfiguration, Router } from "aurelia-router";
 import { User } from "oidc-client";
-import { OpenIdConnect, OpenIdConnectRoles, OpenIdConnectUserObserver } from "aurelia-open-id-connect";
+import { OpenIdConnect, OpenIdConnectRoles } from "aurelia-open-id-connect";
 
-@autoinject()
-export class App implements OpenIdConnectUserObserver {
-    private router: Router;
-    private user: User;
+@autoinject
+export class App {
 
-    constructor(private openIdConnect: OpenIdConnect) {
-        this.openIdConnect.observeUser((user: User) => this.user = user);
-    }
+  private router: Router;
+  private user: User;
 
-    userChanged(user: User): void {
-        this.user = user;
-    }
+  constructor(private openIdConnect: OpenIdConnect) {
+    this.openIdConnect.observeUser((user: User) => this.user = user);
+  }
 
-    configureRouter(config: RouterConfiguration, router: Router) {
+  public configureRouter(routerConfiguration: RouterConfiguration, router: Router) {
 
-        config.title = "OpenID Connect Implicit Flow Demo";
+    // switch from hash (#) to slash (/) navigation
+    routerConfiguration.options.pushState = true;
+    routerConfiguration.title = "OpenID Connect Implicit Flow Demo";
 
-        // Requires server-side support see MapSpaFallbackRoute.
-        config.options.pushState = true;
-        config.options.root = '/';
+    // configure routes
+    routerConfiguration.map([
+      {
+        moduleId: "index",
+        name: "index",
+        route: ["", "index"],
+        title: "index",
+        nav: true,
+      },
+      {
+        moduleId: "private",
+        name: "private",
+        route: ["private"],
+        title: "private",
+        nav: true,
+        settings: {
+          roles: [OpenIdConnectRoles.Authenticated],
+        }
+      },
+    ]);
 
-        config.map([{
-            route: ['', 'home'],
-            name: 'home',
-            settings: { icon: 'home' },
-            moduleId: PLATFORM.moduleName('../home/home'),
-            nav: true,
-            title: 'Home'
-        }, {
-            route: 'counter',
-            name: 'counter',
-            settings: { icon: 'education' },
-            moduleId: PLATFORM.moduleName('../counter/counter'),
-            nav: true,
-            title: 'Counter'
-        }, {
-            route: 'fetch-data',
-            name: 'fetchdata',
-            settings: { icon: 'th-list' },
-            moduleId: PLATFORM.moduleName('../fetchdata/fetchdata'),
-            nav: true,
-            title: 'Fetch data'
-        }]);
-
-        this.openIdConnect.configure(config);
-        this.router = router;
-    }
+    this.openIdConnect.configure(routerConfiguration);
+    this.router = router;
+  }
 }

@@ -14,7 +14,7 @@
             <div class="clearfix"></div>
             <div class="navbar-collapse collapse">
                 <ul class="nav navbar-nav">
-                    <li repeat.for="row of router.navigation | openIdConnectNavigation:user" class="${ row.isActive ? 'link-active' : '' }">
+                    <li repeat.for="row of router.navigation | openIdConnectNavigationFilter:user" class="${ row.isActive ? 'link-active' : '' }">
                         <a href.bind="row.href">
                             <span class="glyphicon glyphicon-${ row.settings.icon }"></span> ${ row.title }
                         </a>
