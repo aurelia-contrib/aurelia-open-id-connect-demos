@@ -9,8 +9,17 @@ export class App {
   private router: Router;
   private user: User;
 
-  constructor(private openIdConnect: OpenIdConnect) {
-    this.openIdConnect.observeUser((user: User) => this.user = user);
+  constructor(private openIdConnect: OpenIdConnect) { }
+
+  public attached() {
+    this.openIdConnect.observeUser((user: User) => this.onUserChanged(user));
+  }
+
+  private onUserChanged(user: User) {
+    this.user = user;
+    if (!this.user) {
+      this.openIdConnect.login();
+    }
   }
 
   public configureRouter(routerConfiguration: RouterConfiguration, router: Router) {
@@ -27,6 +36,9 @@ export class App {
         route: ["", "index"],
         title: "index",
         nav: true,
+        settings: {
+          roles: [OpenIdConnectRoles.Authenticated],
+        }
       },
       {
         moduleId: "private",
