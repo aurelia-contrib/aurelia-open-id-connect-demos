@@ -1,6 +1,6 @@
 # aurelia-open-id-connect-demos
 
-Demos of [aurelia-open-id-connect](https://github.com/shaunluttin/aurelia-open-id-connect).
+Demos of [aurelia-open-id-connect](https://github.com/aurelia-contrib/aurelia-open-id-connect).
 
 # usage
 
