@@ -410,9 +410,9 @@ aurelia-metadata@^1.0.0:
   dependencies:
     aurelia-pal "^1.0.0"
 
-aurelia-open-id-connect@^1.0.3:
-  version "1.0.3"
-  resolved "https://registry.yarnpkg.com/aurelia-open-id-connect/-/aurelia-open-id-connect-1.0.3.tgz#cbd02b9f9a3be3e178d99c75ef0eae88747d05b1"
+aurelia-open-id-connect@^1.2.0:
+  version "1.2.0"
+  resolved "https://registry.yarnpkg.com/aurelia-open-id-connect/-/aurelia-open-id-connect-1.2.0.tgz#c522cc2da251c0b568a4ce322dc74ed0d646ee60"
   dependencies:
     aurelia-fetch-client "^1.0.0"
     aurelia-framework "^1.0.0"
