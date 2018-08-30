@@ -13,7 +13,7 @@
   "dependencies": {
     "aurelia-animator-css": "^1.0.2",
     "aurelia-bootstrapper": "^2.1.1",
-    "aurelia-open-id-connect": "^1.2.0",
+    "aurelia-open-id-connect": "^2.0.0",
     "aurelia-router": "^1.4.0",
     "bluebird": "^3.4.1",
     "oidc-client": "^1.4.1",
