@@ -1,0 +1,38 @@
+<template>
+
+  <style type="text/css">
+    ul {
+      padding-left: 0;
+      list-style: none;
+    }
+
+    li {
+      margin: 0 10px;
+      display: inline-block;
+    }
+
+    div.view {
+      margin: 10px 0;
+      padding: 15px;
+      border: thin solid silver;
+    }
+  </style>
+
+  <span>${router.title}</span>
+
+  <ul>
+    <li repeat.for="nav of router.navigation | openIdConnectNavigationFilter:user">
+      <a href.bind="nav.href">${nav.title}</a>
+    </li>
+    <li>
+      <open-id-connect-user-block></open-id-connect-user-block>
+    </li>
+  </ul>
+
+  <div class="view">
+    <router-view></router-view>
+  </div>
+
+  <open-id-connect-user-debug></open-id-connect-user-debug>
+
+</template>
