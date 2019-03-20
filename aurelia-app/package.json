@@ -13,7 +13,7 @@
   "dependencies": {
     "aurelia-animator-css": "^1.0.2",
     "aurelia-bootstrapper": "^2.1.1",
-    "aurelia-open-id-connect": "^2.0.0",
+    "aurelia-open-id-connect": "^2.0.2",
     "aurelia-router": "^1.4.0",
     "bluebird": "^3.4.1",
     "oidc-client": "^1.4.1",
@@ -31,7 +31,7 @@
     "connect-history-api-fallback": "^1.2.0",
     "debounce": "^1.0.2",
     "event-stream": "^3.3.3",
-    "gulp": "github:gulpjs/gulp#4.0",
+    "gulp": "^4.0.0",
     "gulp-changed-in-place": "^2.0.3",
     "gulp-htmlmin": "^3.0.0",
     "gulp-notify": "^3.1.0",
